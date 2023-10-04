@@ -1,4 +1,1 @@
-RewriteCond %{HTTP_HOST} ^sakhihosting\.in$ [NC]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d 
-RewriteRule ^ https://sakhihosting.in%{REQUEST_URI} [L,R=301]
+ErrorDocument 404 /404.html
