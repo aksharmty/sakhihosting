@@ -1,8 +1,13 @@
-#<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteBase /
-RewriteRule ^404\.php$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /sakhihosting.in/index.php [L]
-#</IfModule>
+# REDIRECT BROKEN LINKS FROM SPECIFIC DOMAIN
+
+<IfModule mod_rewrite.c>
+
+RewriteCond %{REQUEST_FILENAME} .*
+
+RewriteCond %{HTTP_REFERER} ^https?://([^.]+\.)?www.sakhihosting.in\. [NC]
+
+RewriteRule (.*) https://sakhihosting.in/index.php [R=301,L]
+
+# RewriteRule (.*) - [F,L]
+
+</IfModule>
