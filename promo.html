@@ -17,10 +17,23 @@ urls[13] = "http://www.adlandpro.com/partner.aspx?ref=sakhihosting&pg=main";
 var random = Math.floor(Math.random()*urls.length);
 
 //window.location = urls[random];
-setTimeout(() => {
+//setTimeout(() => {
   //document.location.reload();
-  window.location = urls[random];
-}, 6000);
+//  window.location = urls[random];
+//}, 6000);
+
+ function reloadMe(){
+      <!-- window.location.reload("https://adquash.com/postad.php"); -->
+      window.location= urls[random];
+    }
+    function getInterval(){
+        var lowerBound = 9;
+        var upperBound = 15;
+        var randNum = Math.floor((upperBound-lowerBound+1)*Math.random()+lowerBound)*1000;
+        return randNum;
+    }
+    var Interval = getInterval();
+    var srcInterval = setInterval("reloadMe('https://adquash.com/0page.php')",Interval);  
 </script>
 <br>
  <iframe data-aa='1075163' src='//ad.a-ads.com/1075163?size=200x200' style='width:200px; height:200px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
